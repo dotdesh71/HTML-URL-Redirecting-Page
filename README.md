@@ -10,9 +10,9 @@ The Redirect Page is a lightweight HTML page designed to redirect users from one
 To use the Redirect Page, simply host the HTML file on a web server and provide the destination URL as a parameter in the URL query string. The parameter name should be `b`, and the value should be the URL to which you want to redirect the user.
 
 ## Example URL
-https://yourwebsite.com/go.html?b=https://destinationwebsite.com
+1. https://yourwebsite.com/go.html?b=https://destinationwebsite.com
 
-/go.html?b=YOURURL
+2. /go.html?b=YOURURL
 
 
 ## Security Features
