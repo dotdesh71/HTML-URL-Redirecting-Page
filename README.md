@@ -31,3 +31,7 @@ To use the Redirect Page, simply host the HTML file on a web server and provide 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Show Us Support
+🚀 **Support Us:** If you find our work helpful, consider supporting us on [Patreon](https://www.patreon.com/Dotdesh) to help us keep creating useful web design and development resources!
+
