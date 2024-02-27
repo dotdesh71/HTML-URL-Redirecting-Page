@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirect Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <style>
+    body {
+      background-color: #121212;
+      color: #fff;
+    }
+    .ad-container {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #1e1e1e;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .ad-container:hover {
+      transform: translateY(-5px);
+    }
+    .progress {
+      background-color: #343a40;
+      border-radius: 10px;
+      height: 30px;
+    }
+    .progress-bar {
+      background-color: #007bff;
+      border-radius: 10px;
+      transition: width 0.5s ease;
+    }
+    .redirect-info {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .sponsor-text {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    .affiliate-link {
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
+ 
+
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="deny">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+</head>
+<body>
+
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8 text-center">
+      <h1 class="mb-4">Redirecting...</h1>
+      <p class="redirect-info">You will be redirected shortly.</p>
+      <div class="progress mb-4">
+        <div id="progress-bar" class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <p class="lead mb-0">Please wait for <span id="countdown">20</span> seconds...</p>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center ad-container">
+      <h3 class="mb-3">Check out our sponsors:</h3>
+      <!-- Add your ad content here -->
+      <img src="https://via.placeholder.com/300x150" alt="Ad Placeholder" class="img-fluid mb-3">
+      <p class="sponsor-text">Advertisement text goes here...</p>
+      <p class="affiliate-link">Check out our <a href="https://example.com/affiliate" target="_blank" rel="noopener noreferrer">affiliate program</a> for earning commissions.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Parse the URL parameter to get the destination URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const destinationURL = urlParams.get('b');
+
+  // Function to redirect after 20 seconds
+  setTimeout(function() {
+    window.location.href = destinationURL;
+  }, 20000); // 20 seconds in milliseconds
+
+  // Countdown timer
+  let countdown = 20;
+  const countdownElement = document.getElementById('countdown');
+  const progressBar = document.getElementById('progress-bar');
+  const progressInterval = setInterval(function() {
+    countdown--;
+    countdownElement.textContent = countdown;
+    progressBar.style.width = ((20 - countdown) / 20) * 100 + "%";
+    if (countdown <= 0) {
+      clearInterval(progressInterval);
+    }
+  }, 1000); // Update every second
+</script>
+
+</body>
+</html>
